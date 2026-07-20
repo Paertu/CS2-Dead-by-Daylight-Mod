@@ -45,7 +45,6 @@ function generatorStatusCleanup() {
     try {
         Instance.OnBeginRoundRestart(() => {
             try {
-                Instance.Msg("Attempting to reset gens");
                 let allGenerators = Object.values(generators);
                 Instance.Msg(`Attempting to reset ${allGenerators.length} gens`);
 
