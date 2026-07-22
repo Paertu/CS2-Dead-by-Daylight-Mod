@@ -1,0 +1,8 @@
+game/
+content/*/maps/*.vpk
+content/*/maps/*.bsp
+content/*/models/compiled/
+_bakeresourcecache/
+*.log
+*.tmp
+hs_err_pid*

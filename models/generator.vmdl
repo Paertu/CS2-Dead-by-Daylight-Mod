@@ -1,0 +1,67 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc41:version{12fc9d44-453a-4ae4-b4d9-7e2ac0bbd4e0} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\fbx\\mesh\\generator.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						tool_material = ""
+						origin = [ -2.3186817, -0.02704382, 24.528578 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 62.563557, 49.01602, 51.93336 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						tool_material = ""
+						origin = [ 15.506294, -0.026706696, 93.99939 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 6.633446, 8.174561, 90.77539 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						tool_material = ""
+						origin = [ 15.473719, -0.05960369, 152.59747 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 36.493023, 13.931862, 23.872963 ]
+					},
+				]
+				leave_body_collision_unmodified = false
+				body_order = "bone_depth"
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = "prop_dynamic"
+		document_sub_type = "ModelDocSubType_None"
+	}
+}
