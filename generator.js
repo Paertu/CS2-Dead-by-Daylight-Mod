@@ -19,12 +19,16 @@ generatorStatusCleanup();
 generatorRepairAction();
 
 function generatorRepairAction() {
+    Instance.OnScriptInput("StartRepair", (ctx) => {
+        startRepair(ctx);
+    });
+
     Instance.OnScriptInput("RepairAction", (ctx) => {
-        // if (DEBUG_MODE) {
-        //     Instance.Msg(`ctx stringified:${JSON.stringify(ctx)}`);   
-        //     Instance.Msg(`caller expanded:${Object.getOwnPropertyNames(ctx.caller)}`);   
-        //     Instance.Msg(`activator expanded:${Object.getOwnPropertyNames(ctx.activator)}`);   
-        // }
+        if (DEBUG_MODE) {
+            Instance.Msg(`ctx stringified:${JSON.stringify(ctx)}`);   
+            Instance.Msg(`caller expanded:${Object.getOwnPropertyNames(ctx.caller)}`);   
+            Instance.Msg(`activator expanded:${Object.getOwnPropertyNames(ctx.activator)}`);   
+        }
         let gennyName = ctx.caller.GetEntityName();
         if (generators[gennyName] === undefined) {
             Instance.Msg(`genny was undefined, created one called:${JSON.stringify(gennyName)}`);   
@@ -45,7 +49,11 @@ function generatorRepairAction() {
             }
         }
 
-    });    
+    });   
+    
+    Instance.OnScriptInput("EndRepair", (ctx) => {
+        endRepair(ctx);
+    });
 }
 
 function generatorStatusCleanup() {
@@ -88,4 +96,22 @@ function getAllGenerators(generators) {
         Instance.Msg(`Found ${allGenerators.length} gens`);
     }
     return allGenerators;
+}
+
+function startRepair(ctx) {
+    let controller = ctx.activator.GetPlayerController()
+    let name = controller.GetPlayerName()
+    if (DEBUG_MODE) {
+        Instance.Msg(`name debug: ${Object.getOwnPropertyNames(controller)}`);
+        Instance.Msg(`${name} entered the trigger`);
+    }
+}
+
+function endRepair(ctx) {
+    let controller = ctx.activator.GetPlayerController()
+    let name = controller.GetPlayerName()
+    if (DEBUG_MODE) {
+        Instance.Msg(`name debug: ${Object.getOwnPropertyNames(controller)}`);
+        Instance.Msg(`${name} left the trigger`);
+    }
 }
